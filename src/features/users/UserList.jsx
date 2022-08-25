@@ -1,25 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../../components/Button';
+import { useSelector } from 'react-redux';
 
 const UserList = () => {
-    const users = [
-        {
-            id: '1',
-            name: 'Kaew',
-            email: 'test@gmail.com'
-        },
-        {
-            id: '2',
-            name: 'Nueng',
-            email: 'test2@gmail.com'
-        },
-        {
-            id: '3',
-            name: 'Opal',
-            email: 'test3@gmail.com'
-        },
-    ];
+    const users = useSelector(store => store.users);
+    console.log(users);
 
     const renderCard = () => users.map(user => (
         <div className={`bg-gray-300 p-5 flex items-center justify-between`} key={user.id}>
