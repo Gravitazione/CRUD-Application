@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 
 const UserList = () => {
     const users = useSelector(store => store.users);
-    console.log(users);
 
     const renderCard = () => users.map(user => (
         <div className={`bg-gray-300 p-5 flex items-center justify-between`} key={user.id}>
